@@ -82,12 +82,9 @@ verPropiedades()
 //eventoclicck en boton buscar
 const btn = document.querySelector(".btn")
 btn.addEventListener("click",()=>{
- // alert("haz hecho click en boton buscar")
- //variable de cuarto, desde, hasta
  const cuarto = Number(document.querySelector("#cuarto").value)
  const desde = Number(document.querySelector("#desde").value)
  const hasta = Number(document.querySelector("#hasta").value)
- //cear un arreglo auxiliar
  
 if (cuarto == "" || cuarto<= "0"){
   alert("Faltan campos por llenar (cuarto)");
@@ -102,8 +99,6 @@ else if(hasta == "" || hasta <= "0"){
     return;
 }
  let arregloTemporal = []
- //let contador = 0
-//console.log("cuarto, desde, hasta: :",cuarto, desde, hasta)
  for (let propiedad of propiedadesJSON) {
      if (propiedad.rooms >= cuarto && propiedad.m >= desde && propiedad.m <= hasta){
  //     alert("esta propiedad cumple con el buscador: " + propiedad.name)
@@ -113,9 +108,6 @@ else if(hasta == "" || hasta <= "0"){
     }
 }
 verPropiedades(arregloTemporal)
-/*alert("Propiedades de acuerdo a su solicitud: ")*/
-//verPropiedades()
-
 })
 
 const btn1 = document.querySelector("#btn1") 
